@@ -107,7 +107,7 @@ section:nth-of-type(2) h2 {
     text-align: center;
 }
 
-section:nth-of-type(3) {
+section:nth-of-type(4) {
     padding: 80px 60px;
     background: linear-gradient(135deg, #ddd, #383232);
     border-top-left-radius: 60px;
@@ -115,7 +115,7 @@ section:nth-of-type(3) {
     color: white;
 }
 
-section:nth-of-type(3) h2 {
+section:nth-of-type(4) h2 {
     margin-bottom: 20px;
     text-align: center;
 }
@@ -197,7 +197,7 @@ footer {
 
     section:first-of-type,
     section:nth-of-type(2),
-    section:nth-of-type(3),
+    section:nth-of-type(4),
     .portfolio {
         padding: 60px 40px;
     }
@@ -228,7 +228,7 @@ footer {
 
     section:first-of-type,
     section:nth-of-type(2),
-    section:nth-of-type(3),
+    section:nth-of-type(4),
     .portfolio {
         padding: 50px 30px;
     }
@@ -273,7 +273,7 @@ footer {
 
     section:first-of-type,
     section:nth-of-type(2),
-    section:nth-of-type(3),
+    section:nth-of-type(4),
     .portfolio {
         padding: 40px 20px;
     }
@@ -305,7 +305,7 @@ footer {
 }
 
 section:first-of-type,
-section:nth-of-type(3) {
+section:nth-of-type(4) {
     background-size: 200% 200%;
     animation: heroGradient 8s ease infinite;
 }
@@ -391,3 +391,82 @@ section:nth-of-type(3) {
     position: relative;
 }
 
+/* Booking Section - Simplified with Button Only */
+.book-section {
+    padding: 60px 40px;
+    background: #f9f9ff; /* same as site background */
+    text-align: center;
+}
+
+.book-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-content h2 {
+    font-size: 36px;
+    color: rgb(117, 94, 63); /* matching site palette */
+    margin-bottom: 15px;
+}
+
+.book-content > p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Book Button */
+.book-btn {
+    padding: 16px 36px;
+    background: linear-gradient(135deg, rgb(117, 94, 63), #8b6f47);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.book-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(117, 94, 63, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .book-section {
+        padding: 50px 25px;
+    }
+
+    .book-content h2 {
+        font-size: 28px;
+    }
+
+    .book-content > p {
+        font-size: 15px;
+    }
+
+    .book-btn {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-section {
+        padding: 35px 15px;
+    }
+
+    .book-content h2 {
+        font-size: 24px;
+    }
+
+    .book-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}

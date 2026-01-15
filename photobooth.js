@@ -109,6 +109,26 @@ function applyFilter() {
 
     // Base image tone
     switch (currentFilter) {
+        case "window":
+            ctx.filter = "contrast(1.1) brightness(0.95) saturate(0.9)";
+            break;
+
+        case "fade":
+            ctx.filter = "contrast(0.9) brightness(1.05) saturate(0.85)";
+            break;
+
+        case "dust":
+            ctx.filter = "brightness(1.08) contrast(0.95) saturate(0.8)";
+            break;
+
+        case "noir":
+            ctx.filter = "grayscale(0.9) contrast(1.2) brightness(0.9)";
+            break;
+
+        case "glow":
+            ctx.filter = "brightness(1.12) contrast(0.95) saturate(1.05)";
+            break;
+            
         case "grill-soft":
             ctx.filter = "brightness(1.05) contrast(0.95) saturate(0.9)";
             break;
