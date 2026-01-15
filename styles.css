@@ -74,12 +74,29 @@ section:first-of-type button {
     font-size: 16px;
     cursor: pointer;
     font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+section:first-of-type button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 section:first-of-type button:hover {
-    transform: scale(1.05);
-    transition: ease-in-out 0.3s;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+
+section:first-of-type button:hover::after {
+    opacity: 1;
+}
+
 
 section:nth-of-type(2) {
     padding: 80px 60px;
@@ -168,23 +185,23 @@ footer {
 }
 
 /* Tablets landscape */
-@media  (max-width: 1024px) {
+@media (max-width: 1024px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
-    
+
     nav {
         padding: 20px 40px;
     }
-    
+
     section:first-of-type,
     section:nth-of-type(2),
     section:nth-of-type(3),
     .portfolio {
         padding: 60px 40px;
     }
-    
+
     section:first-of-type h2 {
         font-size: 36px;
     }
@@ -197,42 +214,42 @@ footer {
         padding: 15px 30px;
         gap: 15px;
     }
-    
+
     nav h1 {
         padding-right: 0;
         margin-bottom: 10px;
     }
-    
+
     nav ul {
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     section:first-of-type,
     section:nth-of-type(2),
     section:nth-of-type(3),
     .portfolio {
         padding: 50px 30px;
     }
-    
+
     section:first-of-type h2 {
         font-size: 32px;
     }
-    
+
     section:first-of-type p {
         font-size: 16px;
     }
-    
+
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .card {
         flex-direction: column;
     }
-    
+
     .card img {
         width: 100%;
         height: 220px;
@@ -244,45 +261,133 @@ footer {
     nav {
         padding: 15px 20px;
     }
-    
+
     nav h1 {
         font-size: 20px;
     }
-    
+
     nav ul {
         gap: 15px;
         font-size: 14px;
     }
-    
+
     section:first-of-type,
     section:nth-of-type(2),
     section:nth-of-type(3),
     .portfolio {
         padding: 40px 20px;
     }
-    
+
     section:first-of-type h2 {
         font-size: 28px;
     }
-    
+
     section:first-of-type p {
         font-size: 15px;
     }
-    
+
     section:first-of-type button {
         padding: 10px 25px;
         font-size: 14px;
     }
-    
+
     .card-content {
         padding: 15px;
     }
-    
+
     .card h3 {
         font-size: 18px;
     }
-    
+
     .description {
         font-size: 13px;
     }
 }
+
+section:first-of-type,
+section:nth-of-type(3) {
+    background-size: 200% 200%;
+    animation: heroGradient 8s ease infinite;
+}
+
+@keyframes heroGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-content {
+    animation: heroFadeUp 1s ease forwards;
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (min-width: 0px) {
+    .card img {
+        transition: transform 0.4s ease;
+    }
+
+    .card:hover img {
+        transform: scale(1.08);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        overflow: hidden;
+    }
+
+    .card-content {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        color: white;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        pointer-events: none;
+    }
+
+    .card h3,
+    .card .description {
+        color: white;
+    }
+
+    .card:hover .card-content {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .card:hover img {
+        transform: scale(1.12);
+        filter: brightness(0.7);
+    }
+}
+
+.card {
+    position: relative;
+}
+

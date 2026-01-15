@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f9f9ff;
+    color: #333;
+    padding: 40px 20px;
+}
+
+/* ---------- HEADER ---------- */
+
+.booth-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.booth-header h1 {
+    font-size: 42px;
+    color: rgb(117, 94, 63);
+    letter-spacing: 0.5px;
+    padding-top: 10px;
+}
+
+.booth-header p {
+    color: #777;
+    margin-top: 6px;
+    font-weight: 300;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 30px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(117, 94, 63);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    max-height: 10px;
+}
+
+.back-btn::before {
+    content: "←";
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(117, 94, 63, 0.18);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.back-btn:hover::before {
+    transform: translateX(-4px);
+}
+
+
+/* ---------- LAYOUT ---------- */
+
+.booth {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 35px;
+}
+
+/* ---------- CANVAS ---------- */
+
+.canvas-wrapper {
+    background: linear-gradient(135deg, #ececec, #f6f6f6);
+    border-radius: 24px;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+#photoCanvas {
+    max-width: 100%;
+    max-height: 520px;
+    border-radius: 18px;
+}
+
+.canvas-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 15px;
+    pointer-events: none;
+    text-align: center;
+}
+
+.canvas-placeholder::before {
+    content: "＋";
+    font-size: 34px;
+    opacity: 0.6;
+}
+
+/* ---------- CONTROLS ---------- */
+
+.controls {
+    background: white;
+    border-radius: 30px;
+    padding: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.controls h3 {
+    text-align: center;
+    color: rgb(117, 94, 63);
+    font-size: 18px;
+    letter-spacing: 0.4px;
+}
+
+/* ---------- FILTER BUTTONS ---------- */
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.filter-btn {
+    padding: 14px;
+    border-radius: 16px;
+    border: none;
+    background: #fafafa;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Subtle aesthetic hints */
+.filter-btn[data-filter="window"] {
+    background: linear-gradient(135deg, #ede9e3, #d8d2c9);
+}
+
+.filter-btn[data-filter="fade"] {
+    background: linear-gradient(135deg, #f6f0e8, #e7ddcf);
+}
+
+.filter-btn[data-filter="dust"] {
+    background: linear-gradient(135deg, #efe9e4, #ddd2c8);
+}
+
+.filter-btn[data-filter="noir"] {
+    background: linear-gradient(135deg, #d6d6d6, #bfbfbf);
+}
+
+.filter-btn[data-filter="glow"] {
+    background: linear-gradient(135deg, #f7e9ef, #ecd5df);
+}
+
+.filter-btn[data-filter="grill-soft"] {
+    background: linear-gradient(135deg, #e9e2d9, #cfc6bb);
+}
+
+.filter-btn.fractured {
+    background: linear-gradient(135deg, #ede6db, #d6cbbd);
+}
+
+
+
+/* ---------- ACTIONS ---------- */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.upload-btn,
+.reset-btn,
+.download-btn {
+    padding: 15px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.upload-btn {
+    background: rgb(117, 94, 63);
+    color: white;
+    text-align: center;
+}
+
+.reset-btn {
+    background: #f2f2f2;
+}
+
+.download-btn {
+    background: #383232;
+    color: white;
+}
+
+.upload-btn:hover,
+.reset-btn:hover,
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+    .booth {
+        grid-template-columns: 1fr;
+    }
+}

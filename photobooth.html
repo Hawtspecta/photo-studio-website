@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Booth – PhotoStudio</title>
+    <link rel="stylesheet" href="photobooth.css" />
+</head>
+
+<body>
+    <header class="booth-header">
+        <a href="index.html" class="back-btn">Back Home</a>
+        <h1>Photo Booth</h1>
+        <p>Create your aesthetic moment</p>
+    </header>
+
+    <main class="booth">
+        <div class="canvas-wrapper">
+            <canvas id="photoCanvas"></canvas>
+            <span class="canvas-placeholder">Upload a photo to begin</span>
+        </div>
+
+        <aside class="controls">
+            <h3>Choose a Filter</h3>
+
+            <div class="filters">
+                <button class="filter-btn" data-filter="original">Original</button>
+                <button class="filter-btn" data-filter="window">Window Shadow</button>
+                <button class="filter-btn" data-filter="fade">Fade Film</button>
+                <button class="filter-btn" data-filter="dust">Dusty Light</button>
+                <button class="filter-btn" data-filter="noir">Soft Noir</button>
+                <button class="filter-btn" data-filter="glow">Muted Glow</button>
+                <button class="filter-btn" data-filter="grill-soft">Grill Light</button>
+                <button class="filter-btn fractured" data-filter="fractured">Fractured Light</button>
+            </div>
+
+
+            <div class="actions">
+                <label class="upload-btn">
+                    Upload Photo
+                    <input type="file" id="photoUpload" accept="image/*" hidden />
+                </label>
+
+                <button class="reset-btn">Reset</button>
+                <button class="download-btn">Download</button>
+            </div>
+        </aside>
+    </main>
+</body>
+<script src="photobooth.js"></script>
+
+</html>
