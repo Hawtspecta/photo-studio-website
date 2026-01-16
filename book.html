@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Session – PhotoStudio</title>
+    <link rel="stylesheet" href="book.css" />
+</head>
+<body> 
+    <header class="book-header">
+        <a href="index.html" class="back-btn">Back Home</a>
+        <h1>Book a Session</h1>
+        <p>Capture your vibe with us!</p>
+    </header>
+
+    <main class="booking-form">
+        <form action="https://example.com/submit-booking" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required />
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required />
+
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required />
+
+            <label for="package">Select Package:</label>
+            <select id="package" name="package" required>
+                <option value="" disabled selected>Select a package</option>
+                <option value="basic">Basic Shoot - $150</option>
+                <option value="premium">Premium Shoot - $300</option>
+                <option value="editorial">Editorial Shoot - $500</option>
+            </select>
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+
+            <button type="submit" class="submit-btn">Submit Booking</button>
+        </form>
+    </main>
+</body>
+</html>
