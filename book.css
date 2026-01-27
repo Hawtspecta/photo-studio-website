@@ -10,10 +10,26 @@ body {
 }
 
 .book-header {
-    background-color: #333;
+    background: linear-gradient(135deg, #383232, #989292);
     color: white;
     padding: 20px;
     text-align: center;
+    animation: heroGradientt 8s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes heroGradientt {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .back-btn {
@@ -21,11 +37,27 @@ body {
     text-decoration: none;
 }
 
+.back-btn:hover {
+    text-decoration: underline;
+    transition: ease-in-out 0.1s;
+    zoom: 1.05;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #5555556a;
+    padding: 5px 10px;
+}
+
+.book-header h1 {
+    margin: 10px;
+}
+
 .booking-form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .booking-form label {
@@ -34,16 +66,42 @@ body {
 }
 
 .booking-form input,
-.booking-form select,
 .booking-form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
 }
 
+.booking-form select{
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* extra space on right */
+    margin-top: 5px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+
+    cursor: pointer;
+}
+
+
 .submit-btn {
     width: 100%;
     padding: 15px;
     background-color: #333;
     color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+    cursor: pointer;
+    zoom: 1.05;
+    box-shadow: #555;
 }
